@@ -15,19 +15,21 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <div>
-        <h1>Enter Your Name</h1>
+    <div className="w-full py-40 min-h-screen	flex justify-center items-start bg-inherit	">
+      <div className="flex flex-col justify-center items-start bg-inherit	">
+        <div>
+          <h1>Enter Your Name</h1>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Type your name..."
+            value={inputVal}
+            onChange={(e) => setInputVal(e.target.value)}
+          />
+          <button type="submit">Predict Data</button>
+        </form>
       </div>
-      <form>
-        <input
-          type="text"
-          placeholder="Type your name..."
-          value={inputVal}
-          onChange={(e) => setInputVal(e.target.value)}
-        />
-        <button type="submit">Predict Data</button>
-      </form>
     </div>
   );
 }
